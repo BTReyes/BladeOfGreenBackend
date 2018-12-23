@@ -5,11 +5,12 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
+var debug = require('debug')('express-example');
 
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT;
+//var PORT = process.env.PORT;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -34,8 +35,23 @@ require("./routes/post-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+//db.sequelize.sync({ force: true }).then(function() {
+  //app.listen(PORT, function() {
+    //console.log("App listening on PORT " + PORT);
+ // });
+//});
+
+
+// we set the port of the app
+app.set('port', process.env.PORT || 3000);
+
+
+// we sync the models with our db 
+// (thus creating the apropos tables)
+db.sequelize.sync().then(function () {
+	// set our app to listen to the port we set above
+  var server = app.listen(app.get('port'), function() {
+  	// then save a log of the listening to our debugger.
+    debug('Express server listening on port ' + server.address().port);
   });
 });
