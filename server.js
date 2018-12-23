@@ -9,7 +9,7 @@ var express = require("express");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -18,8 +18,13 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//Square SDK
+const SquareConnect = require('square-connect');
+
 // Static directory
 app.use(express.static("public"));
+
+
 
 // Routes
 // =============================================================
