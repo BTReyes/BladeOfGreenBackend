@@ -18,8 +18,13 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//Square SDK
+const SquareConnect = require('square-connect');
+
 // Static directory
 app.use(express.static("public"));
+
+
 
 // Routes
 // =============================================================
