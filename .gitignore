@@ -1,10 +1,7 @@
 # api keys
-.env   
 keys.env
 
 # dependencies
-/node_modules
-
 node_modules
 .DS_Store
 
