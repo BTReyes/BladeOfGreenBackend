@@ -80,7 +80,7 @@ $(document).ready(function() {
     var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
     var newPostOrder = $("<h5>");
-    newPostOrder.text("Written by: " + post.Order.name);
+    newPostOrder.text("Order Number: " + post.Order.name);
     newPostOrder.css({
       float: "right",
       color: "blue",
@@ -133,7 +133,7 @@ $(document).ready(function() {
     blogContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html("No posts yet" + partial + ", navigate <a href='/cms" + query +
+    messageH2.html("No orders yet" + partial + ", navigate <a href='/cms" + query +
     "'>here</a> in order to get started.");
     blogContainer.append(messageH2);
   }
