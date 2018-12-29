@@ -32,4 +32,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/order-manager.html"));
   });
 
+  // customer-info.html
+  app.get("/shopify", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/customer-info.html"));
+  });
+  
 };
