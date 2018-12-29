@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Post.associate = function(models) {
-    // We're saying that a Post should belong to an Order
+    // A Post should belong to an Order
     // A Post can't be created without an Order due to the foreign key constraint
     Post.belongsTo(models.Order, {
       foreignKey: {
