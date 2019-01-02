@@ -3,6 +3,7 @@ $(document).ready(function() {
   var nameInput = $("#order-name");
   var orderList = $("tbody");
   var orderContainer = $(".order-container");
+  
   // Adding event listeners to the form to create a new object, and the button to delete
   // an Order
   $(document).on("submit", "#order-form", handleOrderFormSubmit);

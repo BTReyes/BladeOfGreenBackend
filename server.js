@@ -18,6 +18,10 @@ var debug = require('debug')('express-example');
 const apiKey = process.env.SHOPIFY_API_KEY;
 const apiSecret = process.env.SHOPIFY_API_SECRET;
 const scopes = 'read_products';
+const storefront_token="ec3be75364ba80aeaa3c1123fd8ff43f";
+
+
+
 
 // Replace with HTTPS Forwarding address
 const forwardingAddress = "{https://da5d4750.ngrok.io}"; 
@@ -53,6 +57,4 @@ db.sequelize.sync().then(function () {
     debug('Express server listening on port ' + server.address().port);
   });
 });
-
-
 
