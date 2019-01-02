@@ -1,12 +1,13 @@
 // shopify install route
 
+
 app.get('/shopify', (req, res) => {
-    const shop = req.query.shop;
+    const shop = admin_key
     if (shop) {
       const state = nonce();
       const redirectUri = forwardingAddress + '/shopify/callback';
       const installUrl = 'https://' + shop +
-        '/admin/oauth/authorize?client_id=' + apiKey +
+        '/admin/oauth/authorize?client_id=' + password +
         '&scope=' + scopes +
         '&state=' + state +
         '&redirect_uri=' + redirectUri;
@@ -37,7 +38,7 @@ app.get('/shopify', (req, res) => {
       const providedHmac = Buffer.from(hmac, 'utf-8');
       const generatedHash = Buffer.from(
         crypto
-          .createHmac('sha256', apiSecret)
+          .createHmac('sha256', shared_secret)
           .update(message)
           .digest('hex'),
           'utf-8'
@@ -62,3 +63,4 @@ app.get('/shopify', (req, res) => {
       res.status(400).send('Required parameters missing');
     }
   });
+
