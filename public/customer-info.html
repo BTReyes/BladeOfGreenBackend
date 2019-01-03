@@ -39,15 +39,20 @@
   //     console.log(response);
   //   }); -->
   <script>
-    var orderUrl = 'https://' + "8de57b0da65fac53f03737d4a52af4fa" + ":" + "4b04f890429deeaf8087b83824210736" +
-      "@bladesofgreen.myshopify.com/admin/orders.json";
+//     beforeSend: function (xhr) {
+//     xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
+// };
 
-    $.ajax({
-        url: orderUrl,
-        method: "GET"
-      }).then(function (response) {
-          $("#customer-info").text(JSON.stringify(response));
-      });
+//     var orderUrl = "https://"+username+":"+password+"@bladesofgreen.myshopify.com/admin/orders.json";
+
+//     $.ajax({
+//         url: orderUrl,
+//         method: "GET",
+//         // username: "8de57b0da65fac53f03737d4a52af4fa",
+//         // password: "4b04f890429deeaf8087b83824210736"
+//       }).then(function (response) {
+//           $("#customer-info").text(JSON.stringify(response));
+//       });
   </script>
 
 </body>
