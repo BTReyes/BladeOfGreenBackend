@@ -3,32 +3,52 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Customer Info API</title>
+  <title>Blades of Green Order Memo Tracker- Customer Info API</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
 <!-- GET /admin/customers/#{customer_id}.json -->
 
 <body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    //  queryURL for  API
-    // var queryURL = "https://bladesofgreen.myshopify.com/admin/customers/#{id}.json";
 
-    var queryURL = "https://bladesofgreen.myshopify.com/admin/customers/1001/orders.json";
+  <div id="#customer-info">
+  </div>
+<P>Hello world</P>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  // <script type="text/javascript">
+  //   //  queryURL for  API
+  //   // var queryURL = "https://bladesofgreens.myshopify.com/admin/customers/#{id}.json";
+
+  //   var queryURL = "https://bladesofgreens.myshopify.com/admin/customers/1001/orders.json";
+
+  //   $.ajax({
+  //     url: queryURL,
+  //     method: "GET"
+  //   }).then(function(response) {
+  //     console.log(response);
+  //   });
+
+
+  //   $.ajax({
+  //     url: testURL,
+  //     method: "GET"
+  //   }).then(function(response) {
+  //     console.log(response);
+  //   }); -->
+  <script>
+    var orderUrl = 'https://' + "8de57b0da65fac53f03737d4a52af4fa" + ":" + "4b04f890429deeaf8087b83824210736" +
+      "@bladesofgreen.myshopify.com/admin/orders.json";
 
     $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
-      console.log(response);
-    });
+        url: orderUrl,
+        method: "GET"
+      }).then(function (response) {
+          $("#customer-info").text(JSON.stringify(response));
+      });
   </script>
-
-
-
-
-
 
 </body>
 
-</html> 
+
+
+</html>

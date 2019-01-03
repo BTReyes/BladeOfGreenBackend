@@ -8,3 +8,5 @@ Using ngrok to create tunnel for webhook testing
 
 Key.env for APIs to be hidden with gitignore
 
+Used Heroku CLI to deploy app
+

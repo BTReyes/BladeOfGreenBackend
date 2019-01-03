@@ -14,17 +14,10 @@ const nonce = require('nonce')();
 const querystring = require('querystring');
 const request = require('request-promise');
 var debug = require('debug')('express-example');
+var jquery = require('jquery');
 
-const apiKey = process.env.SHOPIFY_API_KEY;
-const apiSecret = process.env.SHOPIFY_API_SECRET;
-const scopes = 'read_products';
-const storefront_token="ec3be75364ba80aeaa3c1123fd8ff43f";
-
-
-
-
-// Replace with HTTPS Forwarding address
-const forwardingAddress = "{https://da5d4750.ngrok.io}"; 
+//HTTPS Forwarding address
+const forwardingAddress = "https://limitless-lowlands-35662.herokuapp.com/"; 
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -44,6 +37,7 @@ app.use(express.static("public"));
 require("./routes/html-routes.js")(app);
 require("./routes/order-api-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
+// require("./routes/shopify-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // we set the port of the app
