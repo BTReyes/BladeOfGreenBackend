@@ -33,7 +33,7 @@ module.exports = function(app) {
   });
 
   // customer-info.html
-  app.get("/shopify", function(req, res) {
+  app.get("/customer", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/customer-info.html"));
   });
   
