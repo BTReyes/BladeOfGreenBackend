@@ -1,5 +1,5 @@
 var db = require("../models");
-var apikeys = require("../keys");
+var keys = require("../keys");
 
 //pull list from heroku of all orders
 module.exports = function(app) {
@@ -20,8 +20,8 @@ module.exports = function(app) {
     const Shopify = require('shopify-api-node');
     const shopify = new Shopify({
       shopName: 'bladesofgreen',
-      apiKey: apikeys.admin_key,
-      password: apikeys.admin_password,
+      apiKey: apikey.admin_key,
+      password: keys.admin_password,
     });
   
     shopify.order.list({limit: 50})
@@ -36,8 +36,8 @@ module.exports = function(app) {
     const Shopify = require('shopify-api-node');
     const shopify = new Shopify({
       shopName: 'bladesofgreen',
-      apiKey: apikeys.admin_key,
-      password: apikeys.admin_password,
+      apiKey: keys.admin_key,
+      password: keys.admin_password,
     });
 
     shopify.customer.list({limit: 50})
