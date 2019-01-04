@@ -39,18 +39,6 @@ require("./routes/order-api-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
 // require("./routes/shopify-routes.js")(app);
 
-const Shopify = require('shopify-api-node');
-
-const shopify = new Shopify({
-  shopName: 'bladesofgreen',
-  apiKey: 'y8de57b0da65fac53f03737d4a52af4fa',
-  password: '4b04f890429deeaf8087b83824210736'
-});
-
-shopify.order.list({ limit: 50 })
-  .then(orders => console.log(orders))
-  .catch(err => console.error(err));
-
 // Syncing our sequelize models and then starting our Express app
 // we set the port of the app
 app.set('port', process.env.PORT || 3000);
