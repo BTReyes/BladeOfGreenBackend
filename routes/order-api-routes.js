@@ -19,8 +19,8 @@ module.exports = function(app) {
     const Shopify = require('shopify-api-node');
     const shopify = new Shopify({
       shopName: 'bladesofgreen',
-      apiKey: '8de57b0da65fac53f03737d4a52af4fa',
-      password: '4b04f890429deeaf8087b83824210736'
+      apiKey: admin_key,
+      password: password,
     });
   
     shopify.order.list({limit: 10})
@@ -36,8 +36,8 @@ module.exports = function(app) {
     const Shopify = require('shopify-api-node');
     const shopify = new Shopify({
       shopName: 'bladesofgreen',
-      apiKey: '8de57b0da65fac53f03737d4a52af4fa',
-      password: '4b04f890429deeaf8087b83824210736'
+      apiKey: admin_key,
+      password: password,
     });
 
     shopify.customer.list({limit: 50})
