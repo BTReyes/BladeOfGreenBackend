@@ -1,4 +1,5 @@
 var db = require("../models");
+var keys = require("../keys");
 
 module.exports = function(app) {
   app.get("/api/orders", function(req, res) {
@@ -19,8 +20,8 @@ module.exports = function(app) {
     const Shopify = require('shopify-api-node');
     const shopify = new Shopify({
       shopName: 'bladesofgreen',
-      apiKey: '8de57b0da65fac53f03737d4a52af4fa',
-      password: '4b04f890429deeaf8087b83824210736'
+      apiKey: keys.admin_key,
+      password: keys.password
     });
   
     shopify.order.list({limit: 10})
@@ -36,8 +37,8 @@ module.exports = function(app) {
     const Shopify = require('shopify-api-node');
     const shopify = new Shopify({
       shopName: 'bladesofgreen',
-      apiKey: '8de57b0da65fac53f03737d4a52af4fa',
-      password: '4b04f890429deeaf8087b83824210736'
+      apiKey: keys.admin_key,
+      password: keys.password
     });
 
     shopify.customer.list({limit: 50})
