@@ -39,15 +39,6 @@
   //     console.log(response);
   //   }); -->
   <script>
-    var orderUrl = 'https://' + keys.admin_key[0] + ":" + keys.password[0] +
-      "@bladesofgreen.myshopify.com/admin/orders.json";
-
-    $.ajax({
-        url: orderUrl,
-        method: "GET"
-      }).then(function (response) {
-          $("#customer-info").text(JSON.stringify(response));
-      });
   </script>
 
 </body>
