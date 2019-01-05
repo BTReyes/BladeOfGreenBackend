@@ -11,6 +11,7 @@ bladesofgreens.com is a website designed using Shopify's e-commerce platform.  T
 6.  Use the command "theme download" to download your specific theme to your local machine
 7.  open the theme kit in a text editor using "code ." or "atom ."
 8.  In your terminal enter the command "theme watch" to make live updates to your site.
+  ![](images/Screen%20Shot%202019-01-04%20at%206.39.04%20PM.png)
 9.  To edit specific sections select files under the sections directory.
 10. To edit content you can make changes in the "settings_data.json" file in the config directory.
 11. Changes were made in the google analytics were made to limit the sales of the astro turf to zip codes located inside of
