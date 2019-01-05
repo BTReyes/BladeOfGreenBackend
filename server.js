@@ -37,6 +37,7 @@ app.use(express.static("public"));
 require("./routes/html-routes.js")(app);
 require("./routes/order-api-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
+//require("./routes/customer-info-routes.js")(app);
 // require("./routes/shopify-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app

@@ -2,6 +2,7 @@ var db = require("../models");
 var keys = require("../keys");
 const mysql = require('mysql');
 
+<<<<<<< HEAD
 var connection = mysql.createConnection({
   host: "localhost",
 
@@ -18,6 +19,8 @@ var connection = mysql.createConnection({
 
 var currentDate = new Date();
 
+=======
+>>>>>>> master
 //pull list from heroku of all orders
 module.exports = function(app) {
   app.get("/api/orders", function(req, res) {
@@ -34,14 +37,23 @@ module.exports = function(app) {
 //pull list of all orders from api
 
   app.get("/api/shopifyOrders/", function(req, res) {
+<<<<<<< HEAD
     //connect to shopify to grab order information
+=======
+>>>>>>> master
     const Shopify = require('shopify-api-node');
     const shopify = new Shopify({
       shopName: 'bladesofgreen',
+<<<<<<< HEAD
       apiKey: keys.admin_key,
       password: keys.password
+=======
+      apiKey: apikey.admin_key,
+      password: keys.admin_password,
+>>>>>>> d44238b12027eef388b6feaf15593df7bef37c71
     });
   
+<<<<<<< HEAD
     //loop through shopify json response & store the orders placed into orders table in mysql
     shopify.order.list({limit: 10})
       .then(function(orderInfo){
@@ -56,19 +68,33 @@ module.exports = function(app) {
         )
       }
       })
+=======
+    shopify.order.list({limit: 50})
+      .then(orders => console.log(orders))
+>>>>>>> master
       .catch(err => console.error(err));
       console.log("we can get orders");
      
 
+<<<<<<< HEAD
   });
 //get customer information from shopify
   app.get("/api/customers/", function(req, res) {
  
+=======
+  //pull list of all customers from api
+
+  app.get("/api/customers/", function(req, res) {
+>>>>>>> master
     const Shopify = require('shopify-api-node');
     const shopify = new Shopify({
       shopName: 'bladesofgreen',
       apiKey: keys.admin_key,
+<<<<<<< HEAD
       password: keys.password
+=======
+      password: keys.admin_password,
+>>>>>>> d44238b12027eef388b6feaf15593df7bef37c71
     });
 
     //loop through customers from shopify & store it in table
