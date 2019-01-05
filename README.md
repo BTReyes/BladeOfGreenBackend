@@ -16,6 +16,9 @@ bladesofgreens.com is a website designed using Shopify's e-commerce platform.  T
   ![](images/Screen%20Shot%202019-01-04%20at%206.39.04%20PM.png)
 9.  To edit specific sections select files under the sections directory.
 10. To edit content you can make changes in the "settings_data.json" file in the config directory.
+  ![](images/Screen%20Shot%202019-01-02%20at%207.54.18%20PM.png)
+  ![](images/Screen%20Shot%202019-01-02%20at%207.54.55%20PM.png)
+  ![](images/Screen%20Shot%202019-01-02%20at%207.55.09%20PM.png)
 11. Changes were made in the google analytics were made to limit the sales of the astro turf to zip codes located inside of
   Orange County.
   
