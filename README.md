@@ -3,6 +3,7 @@
 bladesofgreens.com is a website designed using Shopify's e-commerce platform.  The owner of the website wanted to a streamlined, easy to use (for both himself and the prospective customer) website that was easy enough for a 50 something retiree to navigate.  Shopify and the range of tools provided by the company allowed for us to construct an easy to use webstore that allows for customers to purchase astro-turf while learning a bit about the company and the services offered.  Developing the look for the site was easy enough in the beginning: select a theme, add some images and your off and running.  The fun of customizing the site comes once you download Shopify's Theme Kit Editor. 
 
 1.  Use homebrew to download shopify by excuting the command: "brew tap shopify/shopify"
+![](images/Screen Shot 2019-01-04 at 6.07.44 PM.png)
 2.  Install the theme kit: "brew install themekit"
 3.  Navigate back to the shopify admin page, click the "Apps" link and generate API credentials by clicking the button
 4.  Name your APP and set all of the permissions to "read and write"
