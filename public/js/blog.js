@@ -78,9 +78,11 @@ $(document).ready(function() {
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-info");
     var newPostTitle = $("<h2>");
+    var newPostStatus = $("<h2>");
     var newPostDate = $("<small>");
     var newPostOrder = $("<h5>");
     newPostOrder.text("Order Number: " + post.Order.name);
+    newPostOrder.text("Order Status: " + post.Order.status);
     newPostOrder.css({
       float: "right",
       color: "blue",
@@ -91,12 +93,14 @@ $(document).ready(function() {
     newPostCardBody.addClass("card-body");
     var newPostBody = $("<p>");
     newPostTitle.text(post.title + " ");
+    newPostStatus.text(post.body);
     newPostBody.text(post.body);
     newPostDate.text(formattedDate);
     newPostTitle.append(newPostDate);
     newPostCardHeading.append(deleteBtn);
     newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
+    newPostCardHeading.append(newPostStatus);
     newPostCardHeading.append(newPostOrder);
     newPostCardBody.append(newPostBody);
     newPostCard.append(newPostCardHeading);
@@ -133,8 +137,8 @@ $(document).ready(function() {
     blogContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html("No orders yet" + partial + ", navigate <a href='/cms" + query +
-    "'>here</a> in order to get started.");
+    messageH2.html("No order memos yet" + partial + ", navigate <a href='/cms" + query +
+    "'>here</a> in to record customer communications.");
     blogContainer.append(messageH2);
   }
 
