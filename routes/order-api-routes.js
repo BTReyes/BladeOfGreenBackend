@@ -46,7 +46,7 @@ module.exports = function(app) {
         connection.query(
           "INSERT INTO Orders SET ?",
           {
-            name: orderInfo[i].id,
+            shopifyOrderId: orderInfo[i].id,
             createdAt: currentDate,
             updatedAt: currentDate
           }
@@ -60,9 +60,7 @@ module.exports = function(app) {
   });
 //get customer information from shopify
   app.get("/api/customers/", function(req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Post
+ 
     const Shopify = require('shopify-api-node');
     const shopify = new Shopify({
       shopName: 'bladesofgreen',
