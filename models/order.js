@@ -1,5 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
   var Order = sequelize.define("Order", {
+<<<<<<< HEAD
+    // Giving the Order model a name of type STRING
+    shopifyId: DataTypes.STRING,
+    status: DataTypes.STRING,
+=======
     name: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -18,7 +23,9 @@ module.exports = function (sequelize, DataTypes) {
       ],
       allowNull: true,
     }
+>>>>>>> master
   });
+  
 
   Order.associate = function (models) {
     // Associating Order with Posts
