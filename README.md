@@ -26,6 +26,8 @@ bladesofgreens.com is a website designed using Shopify's e-commerce platform.  T
   ![](images/Screen%20Shot%202019-01-02%20at%207.55.09%20PM.png)
 11. Changes were made in the google analytics were made to limit the sales of the astro turf to zip codes located inside of
   Orange County.
+  ![](images/Screen%20Shot%202019-01-03%20at%201.40.36%20PM.png)
+  ![](images/Screen%20Shot%202019-01-03%20at%201.41.09%20PM.png)
   
   
 The backend of the app was built using node and express to connect to a mySQL database, this database was created to capture orders and customer information.  In order to create the necessary connections a number of dependencies needed to be implemented. The backend also makes use of the Yarn package manager (https://yarnpkg.com/en/docs/install#mac-stable) which can also be installed using home brew making use of the command "brew install yarn".  Ngrok (http://subdomain.ngrok.com) was also used to create a tunnel for webhook testing.  Ngrok creates a tunnel from the public internet to a port on your local machine. You can give this URL to anyone to allow them to try out a web site you're developing without doing any deployment.
