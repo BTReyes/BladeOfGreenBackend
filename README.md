@@ -7,6 +7,7 @@ bladesofgreens.com is a website designed using Shopify's e-commerce platform.  T
 2.  Install the theme kit: "brew install themekit"
 ![](images/Screen%20Shot%202019-01-05%20at%207.27.54%20AM.png)
 3.  Navigate back to the shopify admin page, click the "Apps" link and generate API credentials by clicking the button
+![](images/Screen%20Shot%202019-01-03%20at%201.18.53%20PM.png)
 4.  Name your APP and set all of the permissions to "read and write"
   ![](images/Screen%20Shot%202019-01-04%20at%205.24.38%20PM.png)
   ![](images/Screen%20Shot%202019-01-04%20at%205.25.03%20PM.png)
