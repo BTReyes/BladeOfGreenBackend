@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Getting jQuery references to the post body, title, form, and order select
   var bodyInput = $("#body");
   var titleInput = $("#title");
@@ -6,10 +6,13 @@ $(document).ready(function() {
   var orderSelect = $("#order");
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);
+
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
   var url = window.location.search;
   var postId;
   var orderId;
+  var orderStatus;
+
   // Sets a flag for whether or not we're updating a post to be false initially
   var updating = false;
 
@@ -50,15 +53,14 @@ $(document).ready(function() {
     if (updating) {
       newPost.id = postId;
       updatePost(newPost);
-    }
-    else {
+    } else {
       submitPost(newPost);
     }
   }
 
   // Submits a new post and brings user to blog page upon completion
   function submitPost(post) {
-    $.post("/api/posts", post, function() {
+    $.post("/api/posts", post, function () {
       window.location.href = "/blog";
     });
   }
@@ -67,22 +69,23 @@ $(document).ready(function() {
   function getPostData(id, type) {
     var queryUrl;
     switch (type) {
-    case "post":
-      queryUrl = "/api/posts/" + id;
-      break;
-    case "order":
-      queryUrl = "/api/orders/" + id;
-      break;
-    default:
-      return;
+      case "post":
+        queryUrl = "/api/posts/" + id;
+        break;
+      case "order":
+        queryUrl = "/api/orders/" + id;
+        break;
+      default:
+        return;
     }
-    $.get(queryUrl, function(data) {
+    $.get(queryUrl, function (data) {
       if (data) {
         console.log(data.OrderId || data.id);
         // If this post exists, prefill our cms forms with its data
         titleInput.val(data.title);
         bodyInput.val(data.body);
         orderId = data.OrderId || data.id;
+        orderStatus = data.orderStatus;
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
         updating = true;
@@ -123,11 +126,11 @@ $(document).ready(function() {
   // Update a given post, bring user to the blog page when done
   function updatePost(post) {
     $.ajax({
-      method: "PUT",
-      url: "/api/posts",
-      data: post
-    })
-      .then(function() {
+        method: "PUT",
+        url: "/api/posts",
+        data: post
+      })
+      .then(function () {
         window.location.href = "/blog";
       });
   }
