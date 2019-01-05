@@ -18,6 +18,7 @@ var connection = mysql.createConnection({
 
 var currentDate = new Date();
 
+//pull list from heroku of all orders
 module.exports = function(app) {
   app.get("/api/orders", function(req, res) {
     // Here we add an "include" property to our options in our findAll query
@@ -29,6 +30,8 @@ module.exports = function(app) {
       res.json(dbOrder);
     });
   });
+
+//pull list of all orders from api
 
   app.get("/api/shopifyOrders/", function(req, res) {
     //connect to shopify to grab order information
@@ -46,7 +49,7 @@ module.exports = function(app) {
         connection.query(
           "INSERT INTO Orders SET ?",
           {
-            shopifyOrderId: orderInfo[i].id,
+            name: orderInfo[i].id,
             createdAt: currentDate,
             updatedAt: currentDate
           }
@@ -86,6 +89,8 @@ module.exports = function(app) {
       .catch(err => console.error(err));
       console.log("we can get customers");
   });
+
+//sequelize database
 
   app.post("/api/orders", function(req, res) {
     db.Order.create(req.body).then(function(dbOrder) {
